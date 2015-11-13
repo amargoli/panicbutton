@@ -16,14 +16,37 @@ SOURCES +=\
     Main.cpp \
     Example.cpp \
     EditStuff.cpp \
-    MainScreen.cpp
+    Actions.cpp \
+    AddAction.cpp \
+    calladdaction.cpp\
+    MainScreen.cpp\
+    email.cpp\
+    text.cpp \
+    menu.cpp \
+    settings.cpp
 
 HEADERS  += \
     Example.h \
     EditStuff.h \
-    MainScreen.h
+    Actions.h \
+    AddAction.h \
+    calladdaction.h\
+    MainScreen.h\
+    email.h\
+    text.h \
+    menu.h \
+    settings.h
 
 FORMS    += \
     Example.ui \
     EditStuff.ui \
-    MainScreen.ui
+    Actions.ui \
+    AddAction.ui \
+    calladdaction.ui\
+    MainScreen.ui\
+    email.ui\
+    text.ui \
+    menu.ui \
+    settings.ui
+
+DISTFILES +=
