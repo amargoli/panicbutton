@@ -23,7 +23,8 @@ SOURCES +=\
     email.cpp\
     text.cpp \
     menu.cpp \
-    settings.cpp
+    settings.cpp \
+    windowmanager.cpp
 
 HEADERS  += \
     Example.h \
@@ -35,7 +36,8 @@ HEADERS  += \
     email.h\
     text.h \
     menu.h \
-    settings.h
+    settings.h \
+    windowmanager.h
 
 FORMS    += \
     Example.ui \

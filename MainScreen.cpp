@@ -19,7 +19,9 @@ MainScreen::~MainScreen()
 void MainScreen::openMenu()
 {
     winAbout->show();
-    this->close();
+    this->hide();
+
+    //WindowManager.stackedLayout->setCurrentIndex(0);
 }
 
 void MainScreen::on_menuButton_clicked()
