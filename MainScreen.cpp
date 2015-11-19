@@ -6,9 +6,9 @@ MainScreen::MainScreen(QWidget *parent) :
     ui(new Ui::MainScreen)
 {
     ui->setupUi(this);
-    winAbout = new Menu();
 
-    this->show();
+
+
 }
 
 MainScreen::~MainScreen()
@@ -18,10 +18,9 @@ MainScreen::~MainScreen()
 
 void MainScreen::openMenu()
 {
-    winAbout->show();
-    this->hide();
-
-    //WindowManager.stackedLayout->setCurrentIndex(0);
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(1);
 }
 
 void MainScreen::on_menuButton_clicked()

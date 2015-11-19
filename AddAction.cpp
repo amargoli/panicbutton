@@ -6,9 +6,6 @@ AddAction::AddAction(QWidget *parent) :
     ui(new Ui::AddAction)
 {
     ui->setupUi(this);
-    winAbout = new CallAddAction();
-    winText = new Text();
-    winEmail = new Email();
 
 
 }
@@ -20,20 +17,30 @@ AddAction::~AddAction()
 
 void AddAction::openCallAddAction()
 {
-    winAbout->show();
-    this->hide();
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(4);
 }
 
 void AddAction::openTextAddAction()
 {
-    winText->show();
-    this->hide();
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(5);
 }
 
 void AddAction::openEmailAddAction()
 {
-    winEmail->show();
-    this->hide();
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(6);
+}
+
+void AddAction::openMenu()
+{
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(1);
 }
 
 void AddAction::on_nextButton_clicked()
@@ -54,3 +61,8 @@ void AddAction::on_nextButton_clicked()
 
 
 
+
+void AddAction::on_menuButton_clicked()
+{
+    openMenu();
+}

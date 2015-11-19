@@ -5,7 +5,7 @@
 #include <Actions.h>
 #include <settings.h>
 #include <menu.h>
-//#include <MainScreen.h>
+#include <MainScreen.h>
 
 
 namespace Ui {
@@ -22,16 +22,16 @@ public:
 
 public slots:
     void openActions();
-//    void openMainScreen();
-//    void openMenu();
-   void openSettings();
+    void openMainScreen();
+    void openMenu();
+    void openSettings();
 
 
 
 private slots:
-//    void on_menuButton_clicked();
+    void on_menuButton_clicked();
 
-//    void on_homeLinkButton_clicked();
+    void on_homeLinkButton_clicked();
 
     void on_actionsLinkButton_clicked();
 
@@ -40,10 +40,7 @@ private slots:
 private:
     Ui::Menu *ui;
 
-    Actions     *winActions;
-//    Menu       *winMenu;
-    Settings     *winSettings;
-//   MainScreen *winMainScreen;
+
 
 };
 

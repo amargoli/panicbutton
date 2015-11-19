@@ -13,7 +13,15 @@ CallAddAction::~CallAddAction()
     delete ui;
 }
 
-void CallAddAction::on_pushButton_clicked()
-{
 
+void CallAddAction::openMenu()
+{
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(1);
+}
+
+void CallAddAction::on_menuButton_clicked()
+{
+    openMenu();
 }

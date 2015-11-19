@@ -21,6 +21,7 @@ public:
     ~MainScreen();
 
 
+
 public slots:
     void openMenu(); //make a new function to call the window
 
@@ -30,7 +31,10 @@ private slots:
 private:
     Ui::MainScreen *ui;
 
-    Menu     *winAbout;
+
+
+
+
 };
 
 #endif // MAINSCREEN_H

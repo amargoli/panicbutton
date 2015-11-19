@@ -3,7 +3,7 @@
 #include <QApplication>
 //#include <Qtgui>
 #include <windowmanager.h>
-#include <MainScreen.h>
+//#include <MainScreen.h>
 //#include <menu.h>
 //#include <Actions.h>
 //#include <AddAction.h>
@@ -67,8 +67,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-     WindowManager w;
-     w.show();
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->show();
 
 
 

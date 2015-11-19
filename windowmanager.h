@@ -17,8 +17,31 @@
 
 class WindowManager : public QWidget
 {
-public:
+private:
+    static WindowManager* _instance;
+
+    WindowManager(WindowManager const&);
+    void operator=(WindowManager const&);
+    //virtual ~WindowManager();
+
+    QWidget *mainPageWidget;
+    QWidget *menuPageWidget;
+    QWidget *actionsPageWidget;
+    QWidget *addActionPageWidget;
+    QWidget *callActionPageWidget;
+    QWidget *textActionPageWidget;
+    QWidget *emailActionPageWidget;
+    QWidget *settingsPageWidget;
+    QStackedLayout *stackedLayout;
+
+protected:
     WindowManager(QWidget *parent = 0);
+
+
+
+public:
+    static WindowManager* getInstance();
+    void changePage(int x);
 };
 
 #endif // WINDOWMANAGER_H

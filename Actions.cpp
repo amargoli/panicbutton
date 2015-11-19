@@ -6,7 +6,6 @@ Actions::Actions(QWidget *parent) :
     ui(new Ui::Actions)
 {
     ui->setupUi(this);
-    winAbout = new AddAction();
 
 
 }
@@ -18,8 +17,16 @@ Actions::~Actions()
 
 void Actions::openAddAction()
 {
-    winAbout->show();
-    this->hide();
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(3);
+}
+
+void Actions::openMenu()
+{
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(1);
 }
 
 
@@ -28,3 +35,8 @@ void Actions::on_pushButton_2_clicked()
     openAddAction();
 }
 
+
+void Actions::on_menuButton_clicked()
+{
+    openMenu();
+}

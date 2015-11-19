@@ -7,10 +7,6 @@ Menu::Menu(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    winActions = new Actions;
-//    winMainScreen =  new MainScreen;
-//    winMenu = new Menu;
-    winSettings = new Settings;
 
 
 }
@@ -22,36 +18,40 @@ Menu::~Menu()
 
 void Menu:: openActions()
 {
-    winActions->show();
-    this->hide();
-}
-//void Menu::openMainScreen()
-//{
 
-//    winMainScreen->show();
-//    this->hide();
-//}
-//void Menu::openMenu()
-//{
-//    winMenu->show();
-//    this->hide();
-//}
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(2);
+}
+void Menu::openMainScreen()
+{
+
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(0);
+}
+void Menu::openMenu()
+{
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(1);
+}
 void Menu::openSettings()
 {
-    winSettings->show();
-    this->hide();
-
+    WindowManager* w;
+    w = WindowManager::getInstance();
+    w->changePage(7);
 }
 
-//void Menu::on_menuButton_clicked()
-//{
-//    openMenu();
-//}
+void Menu::on_menuButton_clicked()
+{
+    openMenu();
+}
 
-//void Menu::on_homeLinkButton_clicked()
-//{
-//    openMainScreen();
-//}
+void Menu::on_homeLinkButton_clicked()
+{
+    openMainScreen();
+}
 
 void Menu::on_actionsLinkButton_clicked()
 {

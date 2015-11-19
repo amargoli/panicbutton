@@ -2,10 +2,7 @@
 #define ADDACTION_H
 
 #include <QWidget>
-#include <calladdaction.h>
-#include <text.h>
-#include <email.h>
-//#include <menu.h>
+#include <windowmanager.h>
 
 namespace Ui {
 class AddAction;
@@ -23,6 +20,7 @@ public slots:
     void openCallAddAction(); //make a new function to call the window
     void openTextAddAction();
     void openEmailAddAction();
+    void openMenu();
 protected:
 
 
@@ -30,11 +28,11 @@ private slots:
     void on_nextButton_clicked();
 
 
+    void on_menuButton_clicked();
+
 private:
     Ui::AddAction *ui;
-    CallAddAction    *winAbout;
-    Text *winText;
-    Email *winEmail;
+
 
 };
 
