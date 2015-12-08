@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>page2.qml</file>
+        <file>../Desktop/menu_button.png</file>
+        <file>creator.qml</file>
+    </qresource>
+</RCC>
