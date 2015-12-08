@@ -2,21 +2,22 @@ import QtQuick 2.4
 import QtQuick.Controls 1.3
 import QtQuick.Window 2.2
 
+
 ApplicationWindow {
     visible: true
     width: 360
     height: 500
     id: mainWindow
-        
-        
-        
+
+
+
         StackView {
             id: stackView
             anchors.fill: parent
             Component.onCompleted: {
                 push( { item: items[0], destroyOnPop:false })
             }
-            property variant items: [comp1.createObject(), comp2.createObject(), comp3.createObject(), comp4.createObject(), comp5.createObject(), comp6.createObject(), comp7.createObject()]   // objects from the components
+            property variant items: [comp1.createObject(), comp2.createObject(), comp3.createObject(), comp4.createObject(), comp5.createObject(), comp6.createObject(), comp7.createObject(), comp8.createObject()]   // objects from the components
         }//end of stackview
 
 ///////////////////////////////////// Home View  /////////////////////////////////////////////////
@@ -56,7 +57,10 @@ ApplicationWindow {
 
         Component{
             id:comp2
+
+
             Rectangle{
+
 
             Button {
                 id: button1
@@ -83,6 +87,7 @@ ApplicationWindow {
                 text: qsTr("Actions")
                 onClicked: {
                     stackView.push({ item: stackView.items[2], destroyOnPop:false })
+                    row.text1="Actions"
                 }
             }
 
@@ -94,7 +99,8 @@ ApplicationWindow {
                 height: 228
                 text: qsTr("Settings")
                 onClicked: {
-                    stackView.pop()
+                    stackView.push({ item: stackView.items[7], destroyOnPop:false })
+                    row.text1="Settings"
                 }
             }
 
@@ -107,6 +113,7 @@ ApplicationWindow {
                 text: qsTr("Add Actions")
                 onClicked: {
                     stackView.push({ item: stackView.items[3], destroyOnPop:false })
+                    row.text1="Add Actions"
                 }
             }
 
@@ -237,11 +244,14 @@ ApplicationWindow {
                     onClicked:{
                         if(comboBox1.currentIndex == 0){
                         stackView.push({ item: stackView.items[5], destroyOnPop:false })
+                            row.text1="Add Actions: Text Mesage"
                         }else if(comboBox1.currentIndex == 1){
                             stackView.push({ item: stackView.items[4], destroyOnPop:false })
+                            row.text1="Add Actions: Phone Call"
 
                         }else if(comboBox1.currentIndex == 2){
                             stackView.push({ item: stackView.items[6], destroyOnPop:false })
+                            row.text1="Add Actions: Email"
 
                         }
                     }//end of onClicked
@@ -626,8 +636,61 @@ ApplicationWindow {
         }//end of rectangle
     }//end of comp7
 
+
+ /////////////////////////////////////  Settings View  /////////////////////////////////////////////////
+
+
+    Component{
+        id:comp8
+
+        Rectangle {
+
+
+            ListView {
+                id: listView1
+                x: 1
+                y: 55
+                width: 358
+                height: 205
+                    model: ListModel{
+                        id: listModel
+                        ListElement{ name: "Sync"
+                        page:8
+                        }
+                        ListElement{ name: "Actions:Text Message"
+                        page:5
+                        }
+                        ListElement{ name: "Actions:Phone"
+                        page:4
+                        }
+                        ListElement{ name: "Actions:Email"
+                        page:6
+                        }
+
+                    }
+
+                    delegate: Button{
+                        width: 358;height: 50 ;
+                        text: model.name
+                        onClicked: {
+                            stackView.push({ item: stackView.items[page], destroyOnPop:false })
+
+                        }
+                    }
+            }
+
+
+
+
+
+
+        }//end of rectangle
+    }//end of comp8
+
 /////////////////////////////////////  ToolBar  /////////////////////////////////////////////////
         Row{
+            id:row
+            property alias text1: toolBarLabel.text
                     Rectangle{
                     id:toolBar2
                     color: "red"
@@ -637,7 +700,7 @@ ApplicationWindow {
                         anchors.top: parent.top
                             height: 58
                         Label {
-                            id: label1
+                            id: toolBarLabel
                             x: 68
                             y: 0
                             width: 220
@@ -672,6 +735,7 @@ ApplicationWindow {
                             //Layout.minimumHeight: 100
                             onClicked:{
                                 stackView.push({ item: stackView.items[1], destroyOnPop:false })
+                                row.text1="Menu"
 
                             }
                        }//end of menuButton
