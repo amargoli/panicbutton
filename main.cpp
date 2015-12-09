@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QStringBuilder>
 
 int main(int argc, char *argv[])
 {
