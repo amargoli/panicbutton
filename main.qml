@@ -751,82 +751,108 @@ ApplicationWindow {
 
     Component{
         id:comp10
+        Rectangle{
+            Rectangle {
+                color:"#e2fc51"
+                radius: 0
+                border.width: 0
+                opacity: 1
+                clip: false
+                visible: true
+                x:0
+                y:157
+                width:360
+                height:167
 
-
-        Rectangle {
-
-
-            TextField {
-                id: textInput1
-                x: 60
-                y: 153
-                width: 240
-                height: 39
-                placeholderText: qsTr("User Name")
-
-            }
-
-            TextField {
-                id: textInput2
-                x: 60
-                y: 203
-                width: 240
-                height: 39
-                placeholderText: qsTr("Password")
-                font.pixelSize: 12
-            }
-
-            Button {
-                id: logInButton
-                x: 30
-                y: 343
-                width: 300
-                height: 34
-                text: qsTr("Log In")
-                checkable: false
-                isDefault: false
-                activeFocusOnPress: false
-                onClicked: {
-                    stackView.push({ item: stackView.items[0],properties:{objectName:"home"}, destroyOnPop:false })
-                    row.visible = true
+                TextField {
+                    id: textInput1
+                    x: 60
+                    y: 28
+                    width: 240
+                    height: 39
+                    readOnly: false
+                    placeholderText: qsTr("User Name")
 
                 }
 
-            }
-
-            Button {
-                id: signUpButton
-                x: 30
-                y: 390
-                width: 300
-                height: 34
-                text: qsTr("Sign Up")
-                rotation: 0
-                onClicked: {
-                    stackView.push({ item: stackView.items[10],properties:{objectName:"signup"}, destroyOnPop:false })
-
+                TextField {
+                    id: textInput2
+                    x: 60
+                    y: 81
+                    width: 240
+                    height: 39
+                    placeholderText: qsTr("Password")
+                    font.pixelSize: 12
                 }
             }
+            Rectangle {
+                color:"#3cec3c"
+                x:0
+                y:325
+                width:360
+                height:149
 
-            Label {
-                id: label1
-                x: 44
-                y: 25
-                width: 273
-                height: 77
-                color: "#1d25b0"
-                text: qsTr("PanicButton")
-                font.strikeout: false
-                font.italic: true
-                style: Text.Raised
-                font.bold: true
-                font.family: "Courier"
-                font.pointSize: 39
-                styleColor: "#fadcdc"
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
+                Button {
+                    id: logInButton
+                    x: 30
+                    y: 28
+                    width: 300
+                    height: 34
+                    text: qsTr("Log In")
+                    checkable: false
+                    isDefault: false
+                    activeFocusOnPress: false
+                    onClicked: {
+                        stackView.push({ item: stackView.items[0],properties:{objectName:"home"}, destroyOnPop:false })
+                        row.visible = true
+
+                    }
+
+                }
+
+                Button {
+                    id: signUpButton
+                    x: 30
+                    y: 80
+                    width: 300
+                    height: 34
+                    text: qsTr("Sign Up")
+                    rotation: 0
+                    onClicked: {
+                        stackView.push({ item: stackView.items[10],properties:{objectName:"signup"}, destroyOnPop:false })
+
+                    }
+                }
             }
+            Rectangle {
+                color:"#60a2f6"
+                border.width: 0
+                x:0
+                y:0
+                width:360
+                height:158
 
+                Label {
+                    id: label1
+                    x: 31
+                    y: 41
+                    width: 298
+                    height: 77
+                    color: "#ffffff"
+                    text: qsTr("PanicButton")
+                    visible: true
+                    opacity: 1
+                    font.strikeout: false
+                    font.italic: true
+                    style: Text.Raised
+                    font.bold: true
+                    font.family: "Tahoma"
+                    font.pointSize: 39
+                    styleColor: "#fadcdc"
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                }
+            }
         }//end of Rectangle
 
     }//end of comp10
