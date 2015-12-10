@@ -12,7 +12,9 @@ Rectangle {
         y: 77
         width: 144
         height: 21
+
         text: qsTr("Actions: Text Message ")
+        color: "green"
     }
 
     Column {
