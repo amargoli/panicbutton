@@ -49,7 +49,8 @@ ApplicationWindow {
                     width: 195
                     text: qsTr("Hold for 5 Seconds ")
                     horizontalAlignment: Text.AlignHCenter
-                }//end of label
+                }
+                //end of label
         }//end of Rectangle
        }//end of comp1
 
@@ -753,21 +754,21 @@ ApplicationWindow {
         id:comp10
         Rectangle{
             Rectangle {
-                color:"#e2fc51"
+                color:"#ffffff"
                 radius: 0
                 border.width: 0
                 opacity: 1
                 clip: false
                 visible: true
                 x:0
-                y:157
+                y:59
                 width:360
-                height:167
+                height:130
 
                 TextField {
                     id: textInput1
-                    x: 60
-                    y: 28
+                    x: 62
+                    y: 22
                     width: 240
                     height: 39
                     readOnly: false
@@ -777,8 +778,8 @@ ApplicationWindow {
 
                 TextField {
                     id: textInput2
-                    x: 60
-                    y: 81
+                    x: 62
+                    y: 77
                     width: 240
                     height: 39
                     placeholderText: qsTr("Password")
@@ -786,18 +787,18 @@ ApplicationWindow {
                 }
             }
             Rectangle {
-                color:"#3cec3c"
+                color:"#ffffff"
                 x:0
-                y:325
+                y:188
                 width:360
-                height:149
+                height:125
 
                 Button {
                     id: logInButton
-                    x: 30
-                    y: 28
-                    width: 300
-                    height: 34
+                    x: 57
+                    y: 69
+                    width: 242
+                    height: 41
                     text: qsTr("Log In")
                     checkable: false
                     isDefault: false
@@ -812,11 +813,19 @@ ApplicationWindow {
 
                 Button {
                     id: signUpButton
-                    x: 30
-                    y: 80
-                    width: 300
-                    height: 34
+                    x: 56
+                    y: 16
+                    width: 243
+                    height: 41
                     text: qsTr("Sign Up")
+                    transformOrigin: Item.Right
+                    opacity: 0.8
+                    activeFocusOnPress: false
+                    iconSource: "q"
+                    tooltip: ""
+                    scale: 1
+                    checkable: false
+                    isDefault: false
                     rotation: 0
                     onClicked: {
                         stackView.push({ item: stackView.items[10],properties:{objectName:"signup"}, destroyOnPop:false })
@@ -824,34 +833,44 @@ ApplicationWindow {
                     }
                 }
             }
-            Rectangle {
-                color:"#60a2f6"
-                border.width: 0
-                x:0
-                y:0
-                width:360
-                height:158
 
+            Rectangle {
+                x: 0
+                y: -73
+                width: 360
+                height: 132
+                color: "#378adf"
                 Label {
-                    id: label1
-                    x: 31
-                    y: 41
-                    width: 298
-                    height: 77
+                    id: label4
+                    x: 71
+                    y: 72
+                    width: 219
+                    height: 47
                     color: "#ffffff"
                     text: qsTr("PanicButton")
+                    verticalAlignment: Text.AlignVCenter
                     visible: true
+                    horizontalAlignment: Text.AlignHCenter
                     opacity: 1
                     font.strikeout: false
-                    font.italic: true
-                    style: Text.Raised
-                    font.bold: true
-                    font.family: "Tahoma"
-                    font.pointSize: 39
+                    font.underline: false
+                    font.family: "Verdana"
+                    font.italic: false
+                    style: Text.Normal
+                    font.bold: false
+                    font.pointSize: 30
                     styleColor: "#fadcdc"
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
                 }
+
+                Rectangle {
+                    id: rectangle1
+                    x: 0
+                    y: 120
+                    width: 360
+                    height: 5
+                    color: "#000000"
+                }
+                border.width: 0
             }
         }//end of Rectangle
 
@@ -864,115 +883,138 @@ ApplicationWindow {
 
         Rectangle {
 
+            Rectangle {
+                x: 0
+                y: 132
+                width: 360
+                height: 350
+                color: "#ffffff"
+                TextField {
+                    id: textField1
+                    x: 69
+                    y: 33
+                    width: 238
+                    height: 37
+                    inputMask: qsTr("")
+                    placeholderText: qsTr("First Name")
+                }
 
-            TextField {
-                id: textField1
-                x: 61
-                y: 123
-                width: 238
-                height: 28
-                placeholderText: qsTr("First Name")
-            }
+                TextField {
+                    id: textField2
+                    x: 69
+                    y: 84
+                    width: 238
+                    height: 41
+                    placeholderText: qsTr("Last Name")
+                }
 
-            TextField {
-                id: textField2
-                x: 61
-                y: 162
-                width: 238
-                height: 28
-                placeholderText: qsTr("Last Name")
-            }
+                TextField {
+                    id: textField3
+                    x: 69
+                    y: 135
+                    width: 238
+                    height: 43
+                    placeholderText: qsTr("Email")
+                }
 
-            TextField {
-                id: textField3
-                x: 61
-                y: 201
-                width: 238
-                height: 28
-                placeholderText: qsTr("Email")
-            }
+                TextField {
+                    id: textField4
+                    x: 69
+                    y: 185
+                    width: 238
+                    height: 39
+                    placeholderText: qsTr("User Name")
+                }
 
-            TextField {
-                id: textField4
-                x: 61
-                y: 241
-                width: 238
-                height: 28
-                placeholderText: qsTr("User Name")
-            }
+                TextField {
+                    id: textField5
+                    x: 69
+                    y: 236
+                    width: 238
+                    height: 41
+                    echoMode: 1
+                    placeholderText: qsTr("Password")
+                }
 
-            TextField {
-                id: textField5
-                x: 61
-                y: 285
-                width: 238
-                height: 28
-                echoMode: 1
-                placeholderText: qsTr("Password")
-            }
-
-            TextField {
-                id: textField6
-                x: 61
-                y: 326
-                width: 238
-                height: 28
-                echoMode: 1
-                placeholderText: qsTr("Comfirm")
-            }
-
-            Button {
-                id: signUpButton2
-                x: 30
-                y: 403
-                width: 300
-                height: 34
-                text: qsTr("Sign Up")
-                rotation: 0
-                onClicked: {
-                    stackView.push({ item: stackView.items[0],properties:{objectName:"home"}, destroyOnPop:false })
-                    row.visible = true
-
+                TextField {
+                    id: textField6
+                    x: 68
+                    y: 293
+                    width: 238
+                    height: 41
+                    echoMode: 1
+                    placeholderText: qsTr("Comfirm")
                 }
             }
+            Rectangle {
+                x: 0
+                y: 477
+                width: 360
+                height: 130
+                color: "#ffffff"
+                Button {
+                    id: signUpButton2
+                    x: 67
+                    y: 21
+                    width: 243
+                    height: 40
+                    text: qsTr("Sign Up")
+                    clip: false
+                    rotation: 0
+                    onClicked: {
+                        stackView.push({ item: stackView.items[0],properties:{objectName:"home"}, destroyOnPop:false })
+                        row.visible = true
 
-            Label {
-                id: label1
-                x: 44
-                y: 25
-                width: 273
-                height: 77
-                color: "#1d25b0"
-                text: qsTr("PanicButton")
-                font.strikeout: false
-                font.italic: true
-                style: Text.Raised
-                font.bold: true
-                font.family: "Courier"
-                font.pointSize: 39
-                styleColor: "#fadcdc"
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-            }
-
-            Label {
-                id: label2
-                x: 131
-                y: 443
-                width: 97
-                height: 16
-                text: qsTr("Log In")
-                font.italic: true
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-
-                MouseArea {
-                        anchors.fill: parent
-                        onClicked:{
-                            stackView.pop()
-
-                        }
                     }
+                }
+
+                Button {
+                    id: signUpButton3
+                    x: 66
+                    y: 75
+                    width: 243
+                    height: 37
+                    text: qsTr("Log In")
+                    rotation: 0
+                }
+            }
+            Rectangle {
+                x: 0
+                y: -1
+                width: 360
+                height: 132
+                color: "#378adf"
+                Label {
+                    id: label3
+                    x: 71
+                    y: 72
+                    width: 219
+                    height: 47
+                    color: "#ffffff"
+                    text: qsTr("PanicButton")
+                    horizontalAlignment: Text.AlignHCenter
+                    font.pointSize: 30
+                    opacity: 1
+                    font.strikeout: false
+                    visible: true
+                    font.underline: false
+                    style: Text.Normal
+                    font.family: "Verdana"
+                    font.bold: false
+                    font.italic: false
+                    styleColor: "#fadcdc"
+                    verticalAlignment: Text.AlignVCenter
+                }
+
+                Rectangle {
+                    id: rectangle1
+                    x: 0
+                    y: 120
+                    width: 360
+                    height: 5
+                    color: "#000000"
+                }
+                border.width: 0
             }
 
 
@@ -990,36 +1032,37 @@ ApplicationWindow {
 
         Rectangle {
             width: 360
-            height: 500
+            height: 576
 
             Label {
                 id: label1
-                x: 33
-                y: 77
+                x: 31
+                y: 158
                 width: 144
                 height: 21
+                color: "#3e3c3c"
                 text: qsTr("Actions: Text Message ")
             }
 
             Column {
-                x: 243
-                y: 115
+                x: 241
+                y: 196
                 Switch { y: 0; width: 47;
                     checked: true
                  }
             }
 
             Column {
-                x: 243
-                y: 145
+                x: 253
+                y: 240
                 Switch { width: 47;
                     checked: true
                  }
             }
 
             Column {
-                x: 243
-                y: 175
+                x: 253
+                y: 270
                 Switch { width: 47;
                     checked: true
                  }
@@ -1027,24 +1070,25 @@ ApplicationWindow {
 
             Label {
                 id: label2
-                x: 33
-                y: 213
+                x: 43
+                y: 308
                 width: 144
                 height: 21
+                color: "#3e3c3c"
                 text: qsTr("Actions: Phone Call ")
             }
 
             Column {
-                x: 243
-                y: 261
+                x: 253
+                y: 356
                 Switch { width: 47;
                     checked: true
                  }
             }
 
             Column {
-                x: 243
-                y: 291
+                x: 253
+                y: 386
                 Switch { width: 47;
                     checked: true
                  }
@@ -1053,32 +1097,33 @@ ApplicationWindow {
 
             Label {
                 id: label3
-                x: 33
-                y: 331
+                x: 43
+                y: 426
                 width: 144
                 height: 21
+                color: "#3e3c3c"
                 text: qsTr("Actions: E-mail ")
             }
 
             Column {
-                x: 243
-                y: 378
+                x: 253
+                y: 473
                 Switch { width: 47;
                     checked: true
                  }
             }
 
             Column {
-                x: 243
-                y: 408
+                x: 253
+                y: 503
                 Switch { width: 47;
                     checked: true
                 }
             }
 
             Column {
-                x: 243
-                y: 438
+                x: 253
+                y: 533
                 Switch { width: 47;
                     checked: true
                 }
@@ -1086,74 +1131,121 @@ ApplicationWindow {
 
             Label {
                 id: label4
-                x: 48
-                y: 115
+                x: 46
+                y: 196
                 width: 98
                 height: 16
+                color: "#3e3c3c"
                 text: qsTr("GPS Location ")
             }
 
             Label {
                 id: label5
-                x: 48
-                y: 378
+                x: 58
+                y: 473
                 width: 98
                 height: 16
+                color: "#3e3c3c"
                 text: qsTr("GPS Location ")
             }
 
             Label {
                 id: label6
-                x: 48
-                y: 256
+                x: 58
+                y: 351
                 width: 98
                 height: 16
+                color: "#3e3c3c"
                 text: qsTr("GPS Location ")
             }
 
             Label {
                 id: label7
-                x: 48
-                y: 145
+                x: 58
+                y: 240
                 width: 98
                 height: 16
+                color: "#3e3c3c"
                 text: qsTr("Map Links")
             }
 
             Label {
                 id: label8
-                x: 48
-                y: 291
+                x: 58
+                y: 386
                 width: 98
                 height: 16
+                color: "#3e3c3c"
                 text: qsTr("Map Links")
             }
 
             Label {
                 id: label9
-                x: 48
-                y: 408
+                x: 58
+                y: 503
                 width: 98
                 height: 16
+                color: "#3e3c3c"
                 text: qsTr("Map Links")
             }
 
             Label {
                 id: label10
-                x: 48
-                y: 175
+                x: 58
+                y: 270
                 width: 98
                 height: 16
+                color: "#3e3c3c"
                 text: qsTr("Personal Message")
             }
 
             Label {
                 id: label11
-                x: 48
-                y: 438
+                x: 58
+                y: 533
                 width: 98
                 height: 16
+                color: "#3e3c3c"
                 text: qsTr("Personal Message")
+            }
+
+            Rectangle {
+                x: 0
+                y: 0
+                width: 360
+                height: 132
+                color: "#378adf"
+                Label {
+                    id: label12
+                    x: 71
+                    y: 72
+                    width: 219
+                    height: 47
+                    color: "#ffffff"
+                    text: qsTr("PanicButton")
+                    verticalAlignment: Text.AlignVCenter
+                    visible: true
+                    horizontalAlignment: Text.AlignHCenter
+                    opacity: 1
+                    font.strikeout: false
+                    font.underline: false
+                    font.family: "Verdana"
+                    font.italic: false
+                    style: Text.Normal
+                    font.bold: false
+                    font.pointSize: 30
+                    styleColor: "#fadcdc"
+                }
+
+                Rectangle {
+                    id: rectangle1
+                    x: 0
+                    y: 120
+                    width: 360
+                    height: 5
+                    color: "#000000"
+                }
+                border.width: 0
             }
 
         }//end of rectangle
